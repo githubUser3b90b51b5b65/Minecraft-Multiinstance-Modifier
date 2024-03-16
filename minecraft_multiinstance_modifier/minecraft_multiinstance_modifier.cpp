@@ -459,12 +459,6 @@ void ModifyXMLFile(const wchar_t* xmlFilePath) {
 	std::wstring multipleInstancesStr_checking = L"desktop4:SupportsMultipleInstances=\"true\"";
 	if (fileContent.find(namespaceStr_checking) != std::wstring::npos || fileContent.find(multipleInstancesStr_checking) != std::wstring::npos) {
 		// 如果已经包含了这些字符串，表示已经修改过，取消操作
-		colorSwitch = 1;
-		g_FontSize = 16;
-		horizonText = 1;
-		text_1 = L"文件在先前已被修改，无需再次修改";
-		SetWindowTextW(startButtonSET, L"完成");
-		DontReload = TRUE;
 		return;
 	}
 
